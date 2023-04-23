@@ -15,12 +15,9 @@ use App\Http\Controllers\ProyectosController;
 use App\Http\Controllers\IncidenciasController;
 use App\Http\Controllers\BitacoraController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-<<<<<<< HEAD
 use App\Http\Controllers\LogViewerController;
-=======
 use App\Http\Controllers\HighchartController;
 
->>>>>>> e86b08e483aa774fec81864b51f386fba3a15f1e
 
 /*
 |--------------------------------------------------------------------------
@@ -107,7 +104,7 @@ Route::get('password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordCon
 Route::post('password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'resetPassword'])->name('password.update');
 
 
-
+Route::delete('/eventos/{id}', [BitacoraController::class, 'destroy'])->name('eventos.destroy');
 Route::post('/empleados', [EmpleadosController::class, 'store'])->name('empleados.store');
 Route::post('/proyectos', [ProyectosController::class, 'store'])->name('proyectos.store');
 Route::post('/incidencias', [IncidenciasController::class, 'store'])->name('incidencias.store');

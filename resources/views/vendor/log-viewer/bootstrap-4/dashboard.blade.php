@@ -2,6 +2,10 @@
 
 @section('title', 'Construtec')
 
+@section('content_header')
+
+@stop
+
 @section('content')
 
 <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">

@@ -3,14 +3,10 @@
 @section('title', 'Construtec')
 
 @section('content_header')
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="LogViewer">
-    <meta name="author" content="ARCANEDEV">
+<h1>Mantenimiento de Incidencias</h1>
 @stop
 
 @section('content')
-
 
 
 <meta charset="utf-8">
@@ -44,17 +40,7 @@
         </main>
     </div>
 
-    {{-- Footer --}}
-    <footer class="main-footer">
-        <div class="container-fluid">
-            <p class="text-muted pull-left">
-                LogViewer - <span class="badge badge-info">version {{ log_viewer()->version() }}</span>
-            </p>
-            <p class="text-muted pull-right">
-                Created with <i class="fa fa-heart"></i> by ARCANEDEV <sup>&copy;</sup>
-            </p>
-        </div>
-    </footer>
+    
 @stop
 
 @section('css')

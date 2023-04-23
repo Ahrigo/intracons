@@ -46,11 +46,11 @@ return [
     */
 
     'logo' => '<br>',
-    // 'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    // 'logo_img_class' => 'brand-image img-circle elevation-3',
-    // 'logo_img_xl' => null,
-    // 'logo_img_xl_class' => 'brand-image-xs',
-    // 'logo_img_alt' => 'AdminLTE',
+    'logo_img' => 'vendor/adminlte/dist/img/LogotipoConstrutecSimple.png',
+    'logo_img_class' => 'img-fluid elevation-7',
+    'logo_img_xl' => null,
+    'logo_img_xl_class' => 'brand-image-xs',
+    'logo_img_alt' => 'AdminLTE',
 
     /*
     |--------------------------------------------------------------------------
@@ -85,8 +85,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
 
     /*
@@ -104,7 +104,7 @@ return [
     'classes_auth_card' => 'bg-gradient-dark',
     'classes_auth_header' => '',
     'classes_auth_body' => 'bg-gradient-dark',
-    'classes_auth_footer' => 'text-center',
+    'classes_auth_footer' => 'd-none',
     'classes_auth_icon' => 'text-light',
     'classes_auth_btn' => 'btn-flat btn-light',
 
@@ -219,6 +219,9 @@ return [
     'laravel_mix_js_path' => 'js/app.js',
 
     /*
+
+
+
     |--------------------------------------------------------------------------
     | Menu Items
     |--------------------------------------------------------------------------
@@ -257,26 +260,35 @@ return [
         ['header' => 'Menú'],
 
         [
-            'text'        => 'Inicio',
+            'text'        => '',
+            
+            'icon'        => ' ',
+            'label'       => '',
+            'label_color' => '',
+            // 'can'         => 'admin.home'
+        ],
+
+        [
+            'text'        => 'Estadísticas',
             'url'         => 'home',
-            'icon'        => 'fas fa-fw fa-home',
+            'icon'        => 'fas fa-tachometer-alt',
             'label'       => 'ADM',
-            'label_color' => 'warning',
+            'label_color' => 'danger',
             // 'can'         => 'admin.home'
         ],
         [
-            'text'        => 'Administración Proyectos',
+            'text'        => 'Proyectos',
             'url'         => 'proyectos',
             'icon'        => 'fas fa-fw fa-tasks',
-            // 'label'       => 'ADM',
+             'label'       => 'OP',
             'label_color' => 'warning',
             'can'         => 'opp'
         ],
         [
-            'text'        => 'Administración Incidencias',
+            'text'        => 'Incidencias',
             'url'         => 'incidencias',
             'icon'        => 'fas fa-fw fa-exclamation-triangle',
-            // 'label'       => 'ADM',
+            'label'       => 'OP',
             'label_color' => 'warning',
             'can'         => 'opp'
         ],
@@ -293,32 +305,34 @@ return [
             'url'         => 'usuarios',
             'icon'        => 'fas fa-fw fa-user',
             'label'       => 'ADM',
-            'label_color' => 'warning',
+            'label_color' => 'danger',
             'can'         => 'rrhh'
         ],
         [
-            'text'        => 'Admin Roles',
+            'text'        => 'Roles',
             'url'         => 'roles',
             'icon'        => 'fas fa-fw fa-user',
             'label'       => 'ADM',
-            'label_color' => 'warning',
+            'label_color' => 'danger',
             'can'         => 'rrhh'
         ],
         
         [
-            'text'        => 'Bitacora Errores',
+            'text'        => 'Bitacora Accesos',
             'url'         => 'bitacora',
             'icon'        => 'fas fa-fw fa-bug',
-            'label'       => 'RH',
-            'label_color' => 'info',
+            'label'       => 'ADM',
+            'label_color' => 'danger',
+            
         ],
 
         [
-            'text'        => 'Activity Log',
+            'text'        => 'Logs del Sistema',
             'url'         => 'log-viewer',
             'icon'        => 'fas fa-fw fa-bug',
-            'label'       => 'RH',
-            'label_color' => 'info',
+            'label'       => 'ADM',
+            'label_color' => 'danger',
+            
         ],
 
         // ['header' => 'Configuración de la cuenta'],

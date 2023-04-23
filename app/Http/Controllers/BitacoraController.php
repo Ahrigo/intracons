@@ -11,8 +11,6 @@ use Illuminate\Http\Request;
 class BitacoraController extends Controller
 {
 
-
-    
     public function index(Request $request)
     {
         $eventos = Evento::all(); // Obtener todos los registros de la tabla de eventos
@@ -63,7 +61,15 @@ class BitacoraController extends Controller
                                        ->with('nombreUsuario', $nombreUsuario)
                                        ->with('correoUsuario', $correoUsuario);
     }
-
+    public function destroy(string $id)
+    {
+        $evento = Evento::find($id); // Buscar el evento por su ID
+        if ($evento) {
+            $evento->delete(); // Eliminar el evento
+            return redirect('/bitacora')->with('success', 'Evento eliminado exitosamente'); // Redirigir con un mensaje de éxito
+        } else {
+            return redirect('/bitacora')->with('error', 'No se encontró el evento'); // Redirigir con un mensaje de error si no se encuentra el evento
+        }
     
-
+    }
 }

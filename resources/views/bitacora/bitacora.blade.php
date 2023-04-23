@@ -10,10 +10,8 @@
 
 @section('content')
 
-
-<div class="container">
     
-<table id="incidencias" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
+<table id="bitacora" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
     <thead class="bg-dark text-white">
 
             <tr>
@@ -26,6 +24,7 @@
                 <th>Plataforma</th>
                 <th>Fecha y Hora</th>
                 <th>Dirección IP</th>
+                <th scope="col">Acciones</th>
                 
                 
             </tr>
@@ -47,12 +46,30 @@
             
             <td>{{ $evento->created_at}}</td>
             <td>{{ $evento->direccion_ip }}</td>
+            <td style="text-align:center;">
+    <div class="d-flex justify-content-center">
+   
+
+        
+
+    <form action="{{ route('eventos.destroy', $evento->id) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger" title="Delete">
+        <i class="fa fa-lg fa-fw fa-trash"></i>
+    </button>
+    </form>
+
+    </td>
+
+
+
+
         </tr>
-    @endforeach
-</tbody>
+        @endforeach
+    </tbody>
     </table>
-</div>
-    
+
 
 @stop
 
@@ -90,7 +107,7 @@
 $(document).ready(function() {
     $.extend(true, $.fn.dataTable.defaults, {
         "oLanguage": {
-            "sSearch": "Buscar Incidencias",
+            "sSearch": "Buscar Registro",
             "sInfo": "Mostrando _START_ a _END_ de _TOTAL_ registros",
             "sInfoEmpty": "Mostrando 0 a 0 de 0 registros",
             "sInfoFiltered": "(filtrados de _MAX_ registros totales)",
@@ -103,7 +120,7 @@ $(document).ready(function() {
     
 });
 
-    $('#incidencias').DataTable({
+    $('#bitacora').DataTable({
         dom: 'Bfrtip',
         buttons: [
             {
